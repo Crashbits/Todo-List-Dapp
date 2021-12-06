@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>To do list Dapp</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <style>
+    main {
+      margin-top: 60px;
+    }
+
+    #content {
+      display: none;
+    }
+
+    form {
+      width: 350px;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      margin-bottom: 0px;
+    }
+
+    #completedTaskList .content {
+      color: grey;
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+
+<body class="m-0">
+  <nav class="w-screen mx-auto bg-black flex">
+    <h1 class="justify-start text-white px-40 py-10 text-5xl font-bold">To Do List</h1>
+    <div class="flex-grow"></div>
+    <ul class="justify-end px-40 py-12">
+      <li class="">
+        <small><a class="text-white" href="#"><span id="account"></span></a></small>
+      </li>
+    </ul>
+  </nav>
+  <div class="flex h-screen justify-center items-center -mt-36">
+      <main role="main" class="">
+        <div id="loader" class="mx-auto">
+        <div id="loader" class="mx-auto ">
+          <p class="font-bold text-xl">Loading...</p>
+        </div>
+        <div id="content">
+          <!-- <form onSubmit="App.createTask(); return false;">
+              <input id="newTask" type="text" class="form-control" placeholder="Add task..." required>
+              <input type="submit" hidden="">
+            </form> -->
+          <ul id="taskList" class="list-unstyled">
+            <div class="taskTemplate" class="checkbox" style="display: none">
+              <label>
+                <input type="checkbox" />
+                <span class="content">Task content goes here...</span>
+              </label>
+            </div>
+          </ul>
+          <ul id="completedTaskList" class="list-unstyled">
+          </ul>
+        </div>
+      </main>
+  </div>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="vendor/truffle-contract/dist/truffle-contract.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
